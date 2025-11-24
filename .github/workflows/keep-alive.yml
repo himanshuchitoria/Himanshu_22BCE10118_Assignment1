@@ -2,7 +2,6 @@ name: Keep Render Servers Alive
 
 on:
   schedule:
-    # Run every 14 minutes (Render sleeps after 15 mins)
     - cron: '*/14 * * * *'
   workflow_dispatch:
 
