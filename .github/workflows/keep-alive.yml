@@ -1,0 +1,19 @@
+name: Keep Render Servers Alive
+
+on:
+  schedule:
+    # Run every 14 minutes (Render sleeps after 15 mins)
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping_servers:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Both Websites
+        run: |
+          echo "Pinging Website 1..."
+          curl -I -m 30 https://himanshu-22bce10118-assignment1-1.onrender.com
+          
+          echo "Pinging Website 2..."
+          curl -I -m 30 https://himanshu-22bce10118-assignment1.onrender.com
