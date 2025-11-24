@@ -1,0 +1,5 @@
+UI/UX Guidelines
+
+- All form validation errors must be displayed as red text under the relevant input.
+- The "Pay Now" button should be green with bold, white text.
+- The cart summary should always display the number of items and the current total price.

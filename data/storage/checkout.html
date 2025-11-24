@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>E-Shop Checkout</title>
+</head>
+<body>
+    <h1>Checkout</h1>
+    <div id="cart-summary">
+        <div>
+            <span>Product 1</span>
+            <button id="add-to-cart-1">Add to Cart</button>
+        </div>
+        <div>
+            <span>Product 2</span>
+            <button id="add-to-cart-2">Add to Cart</button>
+        </div>
+        <div>
+            <span>Items in cart: <span id="item-count">0</span></span>
+            <button id="remove-item">Remove Item</button>
+        </div>
+        <div>
+            <span>Total price: $<span id="total-price">0</span></span>
+            <input id="discount-code" placeholder="Enter discount code" />
+            <button id="apply-discount">Apply</button>
+        </div>
+    </div>
+    <form id="user-form">
+        <input id="user-name" placeholder="Name" required />
+        <input id="user-email" placeholder="Email" type="email" required />
+        <input id="user-address" placeholder="Address" required />
+        <button id="checkout-button" type="button">Checkout</button>
+    </form>
+    <div id="validation-errors" style="color: red;"></div>
+</body>
+</html>
