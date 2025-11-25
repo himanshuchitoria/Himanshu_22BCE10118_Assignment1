@@ -39,42 +39,13 @@ The backend uses FastAPI for efficient asynchronous APIs, while an optional Stre
 
 ## Architecture
 
-+---------------------------------------------+
-|    Support Documents + checkout.html        |
-+---------------------------------------------+
-                      |
-                      v
-+---------------------------------------------+
-|           Chunking & Embedding              |
-+---------------------------------------------+
-                      |
-                      v
-+---------------------------------------------+
-|          Vector Search Database             |
-+---------------------------------------------+
-                      |
-                      v
-+---------------------------------------------+
-|      Retrieval-Augmented Generation         |
-|           (Google Gemini LLM)               |
-+---------------------------------------------+
-                      |
-                      v
-+---------------------------------------------+
-|        Test Case Generation &               |
-|      Selenium Script Generation             |
-+---------------------------------------------+
-                      |
-                      v
-+---------------------------------------------+
-|          FastAPI Backend APIs               |
-+---------------------------------------------+
-                      |
-                      v
-+---------------------------------------------+
-|          Streamlit Frontend UI              |
-+---------------------------------------------+
-
+graph TD
+    A[Support Documents + checkout.html] --> B[Chunking & Embedding]
+    B --> C[Vector Search Database]
+    C --> D[Retrieval-Augmented Generation<br>(Google Gemini LLM)]
+    D --> E[Test Case Generation &<br>Selenium Script Generation]
+    E --> F[FastAPI Backend APIs]
+    F --> G[Streamlit Frontend UI (optional)] 
 ---
 
 ---
