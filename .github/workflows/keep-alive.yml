@@ -2,7 +2,7 @@ name: Keep Render Servers Alive
 
 on:
   schedule:
-    - cron: '*/14 * * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
       - name: Ping Both Websites
         run: |
           echo "Pinging Website 1..."
-          curl -I -m 30 https://himanshu-22bce10118-assignment1-1.onrender.com
+          curl -I -m 60 https://himanshu-22bce10118-assignment1-1.onrender.com
           
           echo "Pinging Website 2..."
-          curl -I -m 30 https://himanshu-22bce10118-assignment1.onrender.com
+          curl -I -m 60 https://himanshu-22bce10118-assignment1.onrender.com
