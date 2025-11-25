@@ -1,4 +1,5 @@
-# Autonomous QA Agent
+# Autonomous QA Agent 
+(As per the assignment 1)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -14,26 +15,26 @@
 
 ## Project Overview
 
-The Autonomous QA Agent is an intelligent system designed to automate the generation of software quality assurance artifacts by creating test cases and UI automation scripts fully grounded in project documentation.
+The Autonomous QA Agent is a smart system that is aimed at automating the process of producing software quality assurance artifacts by developing both test cases and UI automation scripts based on the project documentation completely.
 
-It ingests multiple support documents — including product specs, UI/UX guidelines, and API contracts — alongside a single-page checkout HTML file representing the target web application's UI.
+It swallows a set of supporting documents (such as product specifications, user interface/user experience documentation, and API specifications) and a one-page checkout HTML page that is a representation of the user interface of the target web application.
 
-Using text chunking, semantic embeddings, and vector search, the system creates a knowledge base that feeds context-aware queries to Google’s Gemini Large Language Model. The LLM generates detailed, accurate test cases and Python Selenium scripts that strictly adhere to the uploaded material, eliminating hallucination.
+It works with semantic embeddings, vector search and text chunking to build a knowledge base through which the system feeds context-aware queries to the Gemini Large Language Model of Google. The LLM produces precise and detailed test cases and Python Selenium scripts that are strictly followed by the uploaded content and will do away with the hallucination.
 
-The backend uses FastAPI for efficient asynchronous APIs, while an optional Streamlit frontend provides a user-friendly interface for uploads, test case generation, and script viewing.
+The backend is based on FastAPI to provide efficient asynchronous APIs, and optionally includes a Streamlit frontend to allow users an easy interface to uploads, generate test cases and view scripts.
 
 ---
 
 ## Key Features
 
-- Supports various document formats including markdown, text, JSON, and PDF.
-- Processes checkout HTML for precise Selenium selector extraction.
-- Builds a vector store knowledge base for semantic retrieval.
-- Accepts natural language queries to generate JSON-structured test cases.
-- Converts test cases into runnable, well-structured Python Selenium scripts.
-- Integrates Google Gemini LLM via the official `google-genai` Python client.
-- Employs robust logging and error handling with asynchronous FastAPI.
-- Provides a Streamlit-based front end for simplified user interaction.
+- It supports several document types such as markdown, text, JSON and PDF.
+- Extracts HTML and uses Selenium selectors to extract accurate Selenium selectors.
+- Constructs a semantic retrieval store of knowledge in a vector form.
+- Takes natural language inputs to create the test cases in the form of a JSON.
+- Transfigures test cases into Python Selenium scripts, which are well-structured and runnable.
+- Gathers Google Gemini LLM using the official python client, calledgoogle-genai.
+- Uses strong logging and error processing using asynchronous FastAPI.
+- has a front end based on Streamlit to allow easier user interaction.
 
 ---
 
@@ -54,10 +55,10 @@ The backend uses FastAPI for efficient asynchronous APIs, while an optional Stre
 
 ### Prerequisites
 
-- Python 3.11 strictly as per the versions mentioned for different requirements .
-- Chrome browser with matching ChromeDriver installed
-- Google Cloud project with Gemini API enabled and an API key (free tier compatible)
-- Virtual environment system like `venv` recommended
+- Python 3.11 is strictly in accordance to the versions listed with various requirements .
+- Chrome browser and ChromeDriver are installed.
+- Gemini API project with Google cloud (enabled, free tier) and an API key.
+- Virtual environment system such as environs suggested.
 
 ### Installation
 
@@ -84,25 +85,25 @@ ALLOWED_ORIGINS=*
 
 - uvicorn backend.app:app --reload
 
-(Optional) Start the Streamlit UI frontend:
+- Start the Streamlit UI frontend:
 
-- streamlit run frontend/app.py
+  streamlit run frontend/app.py
 
 ---
 
 ## Usage Guide
 
-1. Upload 3 to 5 support documents describing your application’s requirements, UI/UX rules, and API contracts.
-2. Upload the single-page checkout HTML file of the web app.
-3. Click “Build Knowledge Base” to parse, chunk, embed, and index the uploaded content.
-4. Enter a natural language query in the UI or via API (e.g., “Generate all positive and negative test cases for the discount code feature.”)
-5. Review the generated test cases strictly grounded on your documentation.
-6. Select test cases and generate runnable Selenium Python scripts tailored to your HTML UI.
-7. Download and run automation scripts locally using ChromeDriver to verify UI behavior.
+1. Add 3 to 5 support documents of the requirements of your application, rules of UI/UX, and API contracts.
+2. Post the one page checkout HTML file of the web app.
+3. Click Build Knowledge Base to encode, chunk, embed and index the content uploaded.
+4. Should Input a natural language query to the UI or an-API (e.g., “Generate all positive and negative test cases of the feature of discount codes.)
+5. Test the test cases that have been generated on strict basis based on your documentation.
+6. Choose test cases and create executable Selenium Python scripts specific to your HTML UI.
+7. ChromeDriver may be used to download and execute automation scripts locally to test UI behaviour.
 
 ---
 
-## Sample Documents Provided
+## Sample Documents Provided in Video demonstration
 
 - `product_specs.md` — Business and product feature specifications.
 - `ui_ux_guide.txt` — UI styling and validation instructions.
@@ -113,15 +114,16 @@ ALLOWED_ORIGINS=*
 
 ## Development Highlights
 
-- Integration with Google Gemini LLM through the official `google-genai` Python client ensures powerful, grounded natural language and code generation.
-- Vector store implementation enables semantic retrieval, improving relevance and accuracy of generated test cases.
-- Fully asynchronous FastAPI backend optimizes handling of request concurrency.
-- Modular design separates ingestion, embedding, LLM logic, API routing, and front end cleanly.
-- Comprehensive logs and error handling facilitate debugging and maintainability.
+- It can be integrated with Google Gemini LLM via the official python client, named as Google-genai, to provide strong grounded natural language and code generation.
+- Semantic retrieval through the implementation of a vector store allows relevance and accuracy of generated test cases.
+- FastAPI backend is fully asynchronous, which maximizes the processing of request concurrency.
+- Ingestion, embedding, LLM logic, API routing and front end are decoupled.
+- Full logs and error handling provide maintainability and debugging.
 
 ---
 
 ## Thank You
+Himanshu 22BCE10118
 
 ---
 
