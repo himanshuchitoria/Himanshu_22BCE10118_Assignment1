@@ -4,12 +4,11 @@
 - [Project Overview](#project-overview)
 - [Key Features](#key-features)
 - [Architecture](#architecture)
-- [Directory Structure](#directory-structure)
 - [Setup Instructions](#setup-instructions)
 - [Usage Guide](#usage-guide)
 - [Sample Documents](#sample-documents)
 - [Development Highlights](#development-highlights)
-- [Contact Information](#contact-information)
+
 
 ---
 
@@ -40,51 +39,43 @@ The backend uses FastAPI for efficient asynchronous APIs, while an optional Stre
 
 ## Architecture
 
-Support Documents + checkout.html
-↓
-Chunking & Embedding
-↓
-Vector Search Database
-↓
-Retrieval-Augmented Generation (Google Gemini LLM)
-↓
-Test Case Generation & Selenium Script Generation
-↓
-FastAPI Backend APIs
-↓
-Streamlit Frontend UI (optional)
-
-text
++---------------------------------------------+
+|    Support Documents + checkout.html        |
++---------------------------------------------+
+                      |
+                      v
++---------------------------------------------+
+|           Chunking & Embedding              |
++---------------------------------------------+
+                      |
+                      v
++---------------------------------------------+
+|          Vector Search Database             |
++---------------------------------------------+
+                      |
+                      v
++---------------------------------------------+
+|      Retrieval-Augmented Generation         |
+|           (Google Gemini LLM)               |
++---------------------------------------------+
+                      |
+                      v
++---------------------------------------------+
+|        Test Case Generation &               |
+|      Selenium Script Generation             |
++---------------------------------------------+
+                      |
+                      v
++---------------------------------------------+
+|          FastAPI Backend APIs               |
++---------------------------------------------+
+                      |
+                      v
++---------------------------------------------+
+|          Streamlit Frontend UI              |
++---------------------------------------------+
 
 ---
-
-## Directory Structure
-
-.
-├── backend
-│ ├── app.py # FastAPI server setup and endpoints
-│ ├── core # Core logic modules
-│ │ ├── embedding_manager.py # Manages text embedding generation
-│ │ ├── rag_agent.py # Gemini LLM interaction and prompt logic
-│ │ ├── vector_store.py # Vector database management
-│ ├── api # API route handlers for ingestion & generation
-│ │ ├── ingestion.py # Document and HTML ingestion functions
-│ │ ├── testcase_generation.py # Test case generation endpoint logic
-│ │ ├── selenium_script_gen.py # Selenium script generation logic
-│ ├── models # Pydantic data schemas
-│ │ ├── schemas.py
-├── frontend
-│ ├── app.py # Streamlit UI app
-├── sample_docs
-│ ├── product_specs.md # Sample product specifications
-│ ├── ui_ux_guide.txt # UI and UX guidelines sample
-│ ├── api_endpoints.json # Sample API definition
-│ ├── checkout.html # Example checkout page HTML for selector extraction
-├── .env # Environment variables (e.g., GEMINI_API_KEY)
-├── requirements.txt # Python dependencies
-├── README.md # This documentation
-
-text
 
 ---
 
@@ -92,47 +83,39 @@ text
 
 ### Prerequisites
 
-- Python 3.10 or newer
+- Python 3.11 strictly as per the versions mentioned for different requirements .
 - Chrome browser with matching ChromeDriver installed
 - Google Cloud project with Gemini API enabled and an API key (free tier compatible)
 - Virtual environment system like `venv` recommended
 
 ### Installation
 
-Clone repo
-git clone <repository-url>
-cd <project-folder>
+- Clone repo
+- git clone <repository-url of this project>
+- cd frontend or required folder
 
-Create and activate venv
-python -m venv .venv
-source .venv/bin/activate # Linux/macOS
-.venv\Scripts\activate.bat # Windows
+p Create and activate venv
+- python -m venv .venv
+- source .venv/bin/activate # Linux/macOS
+- .venv\Scripts\activate.bat # Windows
 
-Install dependencies
-pip install -r requirements.txt
+- Install dependencies
+- pip install -r requirements.txt
 
-text
+- Prepare environment variables in `.env` file:
 
-Prepare environment variables in `.env` file:
-
-GEMINI_API_KEY=your_gemini_api_key
+- GEMINI_API_KEY= get yours from google studio (for website i have already mentioned in the environment)
 ALLOWED_ORIGINS=*
-
-text
 
 ### Running
 
-Start the FastAPI backend server:
+- Start the FastAPI backend server:
 
-uvicorn backend.app:app --reload
-
-text
+- uvicorn backend.app:app --reload
 
 (Optional) Start the Streamlit UI frontend:
 
-streamlit run frontend/app.py
-
-text
+- streamlit run frontend/app.py
 
 ---
 
@@ -167,10 +150,8 @@ text
 
 ---
 
-## Contact
-
-For questions or support, contact: your-email@example.com
+## Thank You
 
 ---
 
-*This README provides a clear, detailed overview and instructions designed expressly to meet the project assignment criteria. It ensures ease of understanding and effective evaluation by your reviewers.*
+
